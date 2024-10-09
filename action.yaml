@@ -107,9 +107,12 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: Install Trivy
+    - name: Install Trivy ubuntu
       shell: bash
-      run: curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sudo sh -s -- -b /usr/local/bin ${{ inputs.version }}
+      run: |
+        git clone --depth 1 --branch ${{ inputs.version }} https://github.com/aquasecurity/trivy
+        cd trivy
+        go install ./cmd/trivy
 
     - name: Get current date
       id: date
