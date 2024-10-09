@@ -107,18 +107,11 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: Set up Go
-      uses: actions/setup-go@v5
+    - name: Install Trivy
+      uses: jaxxstorm/action-install-gh-release@v1.10.0
       with:
-        go-version: 1.22 # TODO use Go version from `go.mod`??
-        cache: false
-
-    - name: Install Trivy ubuntu
-      shell: bash
-      run: |
-        git clone --depth 1 --branch ${{ inputs.version }} https://github.com/aquasecurity/trivy
-        cd trivy
-        go install ./cmd/trivy
+        repo: aquasecurity/trivy
+        tag: ${{ inputs.version }}
 
     - name: Get current date
       id: date
