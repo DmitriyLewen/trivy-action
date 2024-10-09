@@ -111,7 +111,7 @@ runs:
       uses: DmitriyLewen/setup-trivy@546ae11546ed06c372e0cd03e85c63ec117a84ed
       with:
         version: ${{ inputs.version }}
-        cache: true
+        cache: ${{ inputs.cache }}
 
     - name: Get current date
       id: date
