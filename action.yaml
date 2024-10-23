@@ -119,7 +119,7 @@ runs:
   steps:
     - name: Install Trivy
       if: ${{ inputs.skip-setup-trivy == 'false' }}
-      uses: DmitriyLewen/setup-trivy@fddb6a4fe01a7bd845669cf407127598e53f28f1
+      uses: DmitriyLewen/setup-trivy@0faeae687c92b01123d6eaafbe78091bc8b610eb
       with:
         version: ${{ inputs.version }}
         cache: ${{ inputs.cache }}
