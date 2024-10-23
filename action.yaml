@@ -112,7 +112,6 @@ inputs:
       `token-setup-trivy` is required when `github.token` in invalid for `https://github.com` server.
       See https://github.com/aquasecurity/setup-trivy/?tab=readme-ov-file#install-trivy-with-non-default-token for more details.
     required: false
-    default: ''
 
 runs:
   using: 'composite'
